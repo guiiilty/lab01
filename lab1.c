@@ -3,15 +3,15 @@
 
 int main()
 {
-    float a, b, c;
-    printf("Enter a -> ");
-    scanf("%f", &a);
-    printf("Enter b -> ");
-    scanf("%f", &b);
-    printf("Enter c -> ");
-    scanf("%f", &c);
+    float x, y, z;
+    printf("Enter x -> ");
+    scanf("%f", &x);
+    printf("Enter y -> ");
+    scanf("%f", &y);
+    printf("Enter z -> ");
+    scanf("%f", &z);
 
-    if (!a && !b && !c)
+    if (!x && !y && !z)
         return 0;
 
     float x = 1.0f;
