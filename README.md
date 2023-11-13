@@ -34,4 +34,55 @@ git clone https://github.com/guiiilty/lab01.git:
 
 4. Составил блок-схему алгоритма для своего варианта
 
-![Скриншот](1.png "блоксхема") 
+![Alt text](1.png)  
+
+5. Решение
+- 1. Написал программу, решающую задачу по своему варианту
+
+```shell
+#include <stdio.h>
+
+int max_of_three(int x, int y, int z) {
+    if (x > y + z) {
+        return x;
+    } else if (y > x + z) {
+        return y;
+    } else if (z > x + y) {
+        return z;
+    } else {
+        return abs(x + y + z - (x > y ? (x > z ? x : z) : (y > z ? y : z)));
+    }
+}
+
+int main() {
+    int x = 1;
+    int y = -2;
+    int z = 0.5;
+
+    int result = max_of_three(x, y, z);
+    printf("Результат: %d\n", result);
+
+    return 0;
+}
+```
+- 2. Результаты работы программы
+
+![Alt text](2.png) 
+
+6. Скомпиллировал и запустил её
+
+![Alt text](3.png) 
+
+7. Получил по отдельности результаты каждого этапа компиляции
+
+- Препроцессор
+
+![Alt text](4.png)
+
+- Компилятор 
+
+![Alt text](5.png)
+
+- Объектные файлы
+
+![Alt text](6.png) 

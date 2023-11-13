@@ -1,60 +1,24 @@
 #include <stdio.h>
-#include <math.h>
 
-int main()
-{
-    float x, y, z;
-    printf("Enter x -> ");
-    scanf("%f", &x);
-    printf("Enter y -> ");
-    scanf("%f", &y);
-    printf("Enter z -> ");
-    scanf("%f", &z);
-
-    if (!x && !y && !z)
-        return 0;
-
-    float x = 1.0f;
-    printf("f(x) = ");
-    if (a)
-    {
-        printf("%f * x^2 ", a);
-        if (b > 0.0f)
-            printf("+ ");
+int max_of_three(int x, int y, int z) {
+    if (x > y + z) {
+        return x;
+    } else if (y > x + z) {
+        return y;
+    } else if (z > x + y) {
+        return z;
+    } else {
+        return abs(x + y + z - (x > y ? (x > z ? x : z) : (y > z ? y : z)));
     }
-    if (b)
-        printf("%f * x ", b);
-    if (c)
-    {
-        if (c > 0.0f)
-            if (a || b)
-                printf("+ ");
-            else
-                printf("- ");
-        printf("%f", fabs(c));
-    }
-    printf("\n");
+}
 
-    float f_x = a * x * x + b * x + c;
-    float f_minus_x = a * -x * -x + b * -x + c;
-    if (f_x == f_minus_x)
-        printf("Function is even: f(x) = %f = f(-x) = %f\n", f_x, f_minus_x);
-    else if (f_minus_x == -f_x)
-        printf("Function is odd: f(-x) = %f = -f(x) = %f\n", f_minus_x, -f_x);
-    else
-        printf ("Function is neither even nor odd: \
-            f(x) = %f != f(-x) = % f != -f(x) = %f\n" , f_x , f_minus_x , -f_x);
+int main() {
+    int x = 1;
+    int y = -2;
+    int z = 0.5;
 
-    if (a)
-    {
-        float vx = -b / (2.0f * a);
-        float vy = a * vx * vx + b * vx + c;
-        printf("Vertex (%f, %f) is a ", vx, vy);
-        if (a > 0.0f)
-            printf("minimum");
-        else
-            printf("maximum");
-        printf("\n");
-    }
+    int result = max_of_three(x, y, z);
+    printf("Результат: %d\n", result);
+
     return 0;
 }
