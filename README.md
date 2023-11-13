@@ -41,6 +41,7 @@ git clone https://github.com/guiiilty/lab01.git:
 
 ```shell
 #include <stdio.h>
+#include <stdlib.h>
 
 int max_of_three(int x, int y, int z) {
     if (x > y + z) {
