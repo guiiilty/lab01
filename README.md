@@ -34,41 +34,48 @@ git clone https://github.com/guiiilty/lab01.git:
 
 4. Составил блок-схему алгоритма для своего варианта
 
-![Alt text](1.png)  
+![Alt text](1.png)
 
 5. Решение
 - Написал программу, решающую задачу по своему варианту
 
 ```shell
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
-int max_of_three(int x, int y, int z) {
-    if (x > y + z) {
-        return x;
-    } else if (y > x + z) {
-        return y;
-    } else if (z > x + y) {
-        return z;
+int main() 
+{
+    float x, y, z;
+    printf("Enter x: ");
+    scanf("%f", &x);
+    printf("Enter y: ");
+    scanf("%f", &y);
+    printf("Enter z: ");
+    scanf("%f", &z);
+
+    float sum = x + y + z;
+
+    if (x > sum - x && x > sum - y && x > sum - z) {
+        printf("Наибольшее значение: %.2f\n", x);
+    } else if (y > sum - x && y > sum - y && y > sum - z) {
+        printf("Наибольшее значение: %.2f\n", y);
+    } else if (z > sum - x && z > sum - y && z > sum - z) {
+        printf("Наибольшее значение: %.2f\n", z);
     } else {
-        return abs(x + y + z - (x > y ? (x > z ? x : z) : (y > z ? y : z)));
+        float difference = sum - (x > y ? x : y) - (x > z ? x : z);
+        printf("Разность между суммой двух других параметров и наибольшим значением: %.2f\n", difference);
     }
-}
-
-int main() {
-    int x = 1;
-    int y = -2;
-    int z = 0.5;
-
-    int result = max_of_three(x, y, z);
-    printf("Результат: %d\n", result);
-
     return 0;
 }
 ```
 - Результаты работы программы
 
-![Alt text](2.png) 
+```
+Enter x: 1
+Enter y: -2
+Enter z: 0.5
+Разность между суммой двух других параметров и наибольшим значением: -2.50
+``` 
 
 6. Ссылки на используемые материалы
 
